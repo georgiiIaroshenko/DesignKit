@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "self:"
+      name = "DesignKit">
+      <FileRef
+         location = "group:Package.swift">
+      </FileRef>
+      <Group
+         location = "group:Sources"
+         name = "Sources">
+         <Group
+            location = "group:DesignKit"
+            name = "DesignKit">
+            <FileRef
+               location = "group:Radius.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Spacing.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Front.swift">
+            </FileRef>
+            <FileRef
+               location = "group:Colors.swift">
+            </FileRef>
+         </Group>
+      </Group>
+      <Group
+         location = "group:Tests"
+         name = "Tests">
+         <Group
+            location = "group:DesignKitTests"
+            name = "DesignKitTests">
+            <FileRef
+               location = "group:DesignKitTests.swift">
+            </FileRef>
+         </Group>
+      </Group>
+   </Group>
+</Workspace>
