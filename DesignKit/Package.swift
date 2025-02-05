@@ -1,4 +1,4 @@
-// swift-tools-version: 5.8
+// swift-tools-version: 5.7
 import PackageDescription
 
 let package = Package(
@@ -12,9 +12,7 @@ let package = Package(
     targets: [
         .target(
             name: "DesignKit",
-            path: "Sources",
-            plugins: [
-            ]
+            path: "Sources"
         )
     ]
 )
