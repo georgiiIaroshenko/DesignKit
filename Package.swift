@@ -12,7 +12,10 @@ let package = Package(
     targets: [
         .target(
             name: "DesignKit",
-            path: "Sources"
+            path: "Sources",
+            resources: [
+                          .process("Resources/Assets.xcassets")
+                          ]
         )
     ]
 )
