@@ -12,7 +12,7 @@ let package = Package(
     targets: [
         .target(
             name: "DesignKit",
-            dependencies: [],
+            path: "Sources",
             plugins: [
             ]
         )
