@@ -105,7 +105,7 @@ internal enum DSColor {
     ]
     
     private static func loadColor(_ assetName: String) -> UIColor {
-        guard let color = UIColor(named: assetName) else {
+        guard let color = UIColor(named: assetName, in: .module, compatibleWith: nil) else {
             fatalError("Color asset not found: \(assetName)")
         }
         return color
