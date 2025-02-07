@@ -7,7 +7,7 @@ protocol OnboardingUIProtocol {
 public struct OnboardingUI: OnboardingUIProtocol {
     public init(){}
     public func createNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton {
-        let font = FontFactory(font: .light, size: .large, color: .white100, alignment: .center)
+        let font = FontFactory(font: .semiBold, size: .large, color: .white100, alignment: .center)
         return ActionButton.init(text: text, frontText: font, style: .positive, cornerRadius: .max, backgroundColor: .primary500, action: action).createButton()
     }
 }
