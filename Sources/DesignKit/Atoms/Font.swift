@@ -39,7 +39,7 @@ internal enum DSFont: String {
         ]
         
         for fileName in fontFiles {
-            guard let fontURL = Bundle.module.url(forResource: fileName, withExtension: nil) else {
+            guard let fontURL = Bundle.module.url(forResource: fileName, withExtension: "ttf") else {
                 print("⚠️ Font file not found in module resources:", fileName)
                 continue
             }
