@@ -6,7 +6,7 @@ public protocol OnboardingUIProtocol {
 
 public class OnboardingUI: OnboardingUIProtocol {
     
-    static let shared = OnboardingUI()
+    public static let shared = OnboardingUI()
     
     private init(){}
     
