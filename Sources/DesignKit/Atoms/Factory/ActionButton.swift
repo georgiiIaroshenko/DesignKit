@@ -6,8 +6,8 @@ class ActionButton {
         case positive
     }
     
-    let text: String
-    let frontText: FontFactory
+    private let text: String
+    private let frontText: FontFactory
     private let image: UIImage?
     private let style: ActionButton.Style
     private let cornerRadius: AppRadius
