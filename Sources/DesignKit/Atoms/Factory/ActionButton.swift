@@ -31,6 +31,7 @@ class ActionButton {
         
         let attributedTitle = frontText.attributedString(for: text)
         button.setAttributedTitle(attributedTitle, for: .normal)
+        print("Attributed title: \(text)")
         button.backgroundColor = backgroundColor.uiColor
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
         
