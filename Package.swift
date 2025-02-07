@@ -15,7 +15,7 @@ let package = Package(
             path: "Sources",
             resources: [
                 .process("Resources/Assets.xcassets"),
-                .process("Resources")
+                .process("Resources/Fronts")
             ]
         )
     ]
