@@ -21,7 +21,7 @@ class ActionButton {
     }
     
     func createButton() -> UIButton {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.layer.cornerRadius = cornerRadius.fgfg()
         
         let attributedTitle = frontText.attributedString(for: text)

@@ -23,8 +23,8 @@ internal struct FontFactory: FontFactoryProtocol {
         return NSAttributedString(
             string: text,
             attributes: [
-//                .font: font.font(ofSize: size),
-                .font: UIFont.systemFont(ofSize: 20),
+                .font: font.rawValue,
+//                .font: UIFont.systemFont(ofSize: 20),
                 .foregroundColor: color.uiColor,
                 .paragraphStyle: paragraphStyle
             ]
