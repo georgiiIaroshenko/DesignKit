@@ -23,7 +23,7 @@ internal struct FontFactory: FontFactoryProtocol {
         return NSAttributedString(
             string: text,
             attributes: [
-                .font: font.font(ofSize: size),
+                .font: UIFont(name: "Poppins-SemiBold", size: 16)!,
 //                .font: UIFont.systemFont(ofSize: 20),
                 .foregroundColor: color.uiColor,
                 .paragraphStyle: paragraphStyle
