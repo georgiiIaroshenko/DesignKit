@@ -31,11 +31,11 @@ internal enum DSFont: String {
     private static func registerAllFonts() {
         // Названия самих .ttf файлов
         let fontFiles = [
-            "Poppins-Regular.ttf",
-            "Poppins-SemiBold.ttf",
-            "Poppins-Bold.ttf",
-            "Poppins-Medium.ttf",
-            "Poppins-Light.ttf"
+            "Poppins-Regular",
+            "Poppins-SemiBold",
+            "Poppins-Bold",
+            "Poppins-Medium",
+            "Poppins-Light"
         ]
         
         for fileName in fontFiles {
