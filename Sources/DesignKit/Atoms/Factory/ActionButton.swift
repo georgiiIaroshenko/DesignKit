@@ -23,17 +23,10 @@ class ActionButton {
     func createButton() -> UIButton {
         let button = UIButton()
         button.layer.cornerRadius = cornerRadius.fgfg()
-//        
-//        let attributedTitle = frontText.attributedString(for: text)
-//        button.setAttributedTitle(attributedTitle, for: .normal)
-        let attributedTitle = NSAttributedString(
-            string: text,
-            attributes: [
-                .font: UIFont.systemFont(ofSize: 20),
-                .foregroundColor: UIColor.black
-            ]
-        )
+        
+        let attributedTitle = frontText.attributedString(for: text)
         button.setAttributedTitle(attributedTitle, for: .normal)
+        
         print("Attributed title: \(text)")
         button.backgroundColor = backgroundColor.uiColor
         let uiAction = UIAction { [action = self.action] _ in
