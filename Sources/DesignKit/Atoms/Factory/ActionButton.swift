@@ -1,20 +1,16 @@
 import UIKit
 
 class ActionButton {
-    public enum Style: String, CaseIterable {
-        case negative
-        case positive
-    }
     
-    private let text: String
-    private let frontText: FontFactory
-    private let image: UIImage?
-    private let style: ActionButton.Style
-    private let cornerRadius: AppRadius
-    private let backgroundColor: DSColor
-    @objc private let action: () -> Void
+     let text: String
+     let frontText: FontFactory
+     let image: UIImage?
+     let style: Style
+     let cornerRadius: AppRadius
+     let backgroundColor: DSColor
+     let action: () -> Void
     
-    init(text: String, frontText: FontFactory, style: ActionButton.Style, cornerRadius: AppRadius, image: UIImage? = nil ,backgroundColor: DSColor, action: @escaping () -> Void) {
+    init(text: String, frontText: FontFactory, style: Style, cornerRadius: AppRadius, image: UIImage? = nil ,backgroundColor: DSColor, action: @escaping () -> Void) {
         self.text = text
         self.frontText = frontText
         self.style = style
@@ -40,4 +36,9 @@ class ActionButton {
         
         return button
     }
+}
+
+public enum Style: String, CaseIterable {
+    case negative
+    case positive
 }
