@@ -1,29 +1,55 @@
 import UIKit
+import CoreText
+
 
 internal enum DSFont: String {
-    case regular = "Poppins-Regular"
+    case regular  = "Poppins-Regular"
     case semiBold = "Poppins-SemiBold"
-    case bold = "Poppins-Bold"
-    case medium = "Poppins-Medium"
-    case light = "Poppins-Light"
+    case bold     = "Poppins-Bold"
+    case medium   = "Poppins-Medium"
+    case light    = "Poppins-Light"
     
-    public func font(ofSize size: AppFontSize) -> UIFont {
-        guard let front = UIFont(name: self.rawValue, size: size.rawValue) else {
-            return UIFont.systemFont(ofSize: size.rawValue)
+    /// Ленивая регистрация шрифтов один раз
+    private static var didRegisterFonts: Bool = {
+        registerAllFonts()
+        return true
+    }()
+    
+    /// Возвращает шрифт нужного размера, предварительно регистрируя его
+    func font(ofSize size: AppFontSize) -> UIFont {
+        // Гарантируем, что шрифты зарегистрированы
+        _ = Self.didRegisterFonts
+        
+        guard let font = UIFont(name: self.rawValue, size: size.rawValue) else {
+            // fallback на системный
+            return .systemFont(ofSize: size.rawValue)
         }
-        return front
+        return font
     }
-    //MARK: - Заготовка для динамичного типа
-//    @available(iOS 11.0, *)
-//       public func preferredFont(for textStyle: UIFont.TextStyle, maximumPointSize: CGFloat? = nil) -> UIFont {
-//           let metrics = UIFontMetrics(forTextStyle: textStyle)
-//           let baseFont = self.font(ofSize: UIFont.systemFontSize)
-//           if let maxSize = maximumPointSize {
-//               return metrics.scaledFont(for: baseFont, maximumPointSize: maxSize)
-//           } else {
-//               return metrics.scaledFont(for: baseFont)
-//           }
-//       }
+
+    /// Фактическая регистрация файлов TTF из ресурсов
+    private static func registerAllFonts() {
+        // Названия самих .ttf файлов
+        let fontFiles = [
+            "Poppins-Regular.ttf",
+            "Poppins-SemiBold.ttf",
+            "Poppins-Bold.ttf",
+            "Poppins-Medium.ttf",
+            "Poppins-Light.ttf"
+        ]
+        
+        for fileName in fontFiles {
+            guard let fontURL = Bundle.module.url(forResource: fileName, withExtension: nil) else {
+                print("⚠️ Font file not found in module resources:", fileName)
+                continue
+            }
+            var errorRef: Unmanaged<CFError>?
+            CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, &errorRef)
+            if let error = errorRef?.takeUnretainedValue() {
+                print("⚠️ Failed to register \(fileName): \(error)")
+            }
+        }
+    }
 }
 
 internal enum AppFontSize: CGFloat {

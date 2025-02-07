@@ -14,7 +14,8 @@ let package = Package(
             name: "DesignKit",
             path: "Sources",
             resources: [
-                .process("Resources/Assets.xcassets")
+                .process("Resources/Assets.xcassets"),
+                .process("Resources/Fonts")
             ]
         )
     ]
