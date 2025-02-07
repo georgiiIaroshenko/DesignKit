@@ -53,16 +53,7 @@ internal enum DSFont: String {
 }
 
 internal enum AppFontSize: CGFloat {
-    case  small, midium, large
-    
-    func returnSize() -> CGFloat {
-        switch self {
-        case .midium:
-            return 14.0
-        case .small:
-            return 12.0
-        case .large:
-            return 16.0
-        }
-    }
+    case small = 12.0
+    case midium = 14.0  
+    case large = 16.0
 }
