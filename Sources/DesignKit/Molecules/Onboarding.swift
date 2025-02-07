@@ -11,7 +11,7 @@ public class OnboardingUI: OnboardingUIProtocol {
     public static let shared = OnboardingUI()
     
     public func createNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton {
-        let font = FontFactory(font: .regular, size: .large, color: .white100, alignment: .center)
+        let font = FontFactory(font: .semiBold, size: .large, color: .white100, alignment: .center)
         return ActionButton(text: text, frontText: font, style: .positive, cornerRadius: .max, backgroundColor: .primary500, action: action).createButton()
     }
 }
