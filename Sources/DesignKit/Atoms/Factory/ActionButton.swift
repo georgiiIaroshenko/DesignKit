@@ -27,8 +27,8 @@ class ActionButton {
     func createButton() -> UIButton {
         let button = UIButton()
         button.layer.cornerRadius = cornerRadius.fgfg()
-        button.setTitle(text, for: .normal)
-        button.titleLabel?.attributedText = frontText.attributedString()
+//        button.setTitle(text, for: .normal)
+        button.titleLabel?.attributedText = frontText.attributedString(for: text)
         button.backgroundColor = backgroundColor.uiColor
         button.addTarget(self, action: #selector(getter: action), for: .touchUpInside)
         return button

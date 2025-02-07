@@ -16,7 +16,7 @@ internal struct FontFactory: FontFactoryProtocol {
         self.alignment = alignment
     }
     
-    internal func attributedString(for text: String = "") -> NSAttributedString {
+    internal func attributedString(for text: String) -> NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = alignment
         
