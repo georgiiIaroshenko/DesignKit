@@ -25,12 +25,20 @@ class ActionButton {
     }
     
     func createButton() -> UIButton {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.layer.cornerRadius = cornerRadius.fgfg()
 //        button.setTitle(text, for: .normal)
-        button.setAttributedTitle(frontText.attributedString(for: text), for: .normal)
+        
+        let attributedTitle = frontText.attributedString(for: text)
+        button.setAttributedTitle(attributedTitle, for: .normal)
         button.backgroundColor = backgroundColor.uiColor
-        button.addTarget(self, action: #selector(getter: action), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+        
         return button
     }
+    
+    @objc private func handleTap() {
+            action()
+        }
+    
 }
