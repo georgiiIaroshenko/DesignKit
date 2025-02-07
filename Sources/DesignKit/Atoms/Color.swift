@@ -87,7 +87,7 @@ internal enum DSColor {
         .primary900:  loadColor("Colors/primary900"),
         
         // Red
-        .red100:      loadColor("Colors/Red/red100"),
+        .red100:      loadColor("Colors/red100"),
         
         // Secondary
         .secondary100: loadColor("Colors/secondary100"),
