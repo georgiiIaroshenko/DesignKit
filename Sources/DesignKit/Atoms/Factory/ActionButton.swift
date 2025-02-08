@@ -2,14 +2,14 @@ import UIKit
 
 class ActionButton {
     
-     let text: String
-     let frontText: FontFactory
-     let image: UIImage?
-     let style: Style
-     let cornerRadius: AppRadius
-     let backgroundColor: DSColor
+    let text: String
+    let frontText: FontFactory
+    let image: UIImage?
+    let style: Style
+    let cornerRadius: AppRadius
+    let backgroundColor: DSColor
     let opacity: DSOpacity
-     let action: () -> Void
+    let action: () -> Void
     
     init(text: String, frontText: FontFactory, style: Style, cornerRadius: AppRadius, image: UIImage? = nil ,backgroundColor: DSColor, opacity: DSOpacity, action: @escaping () -> Void) {
         self.text = text
@@ -25,7 +25,7 @@ class ActionButton {
     func createButton() -> UIButton {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = cornerRadius.radiusValue()
-        button.layer.opacity = opacity.opacityValue()
+        button.layer.opacity = opacity.alpha()
         let attributedTitle = frontText.attributedString(for: text)
         button.setAttributedTitle(attributedTitle, for: .normal)
         

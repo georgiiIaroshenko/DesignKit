@@ -1,6 +1,6 @@
 import UIKit
 
-protocol OnboardingUIProtocol {
+public protocol OnboardingUIProtocol {
     func createNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton
     func skipNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton
 }
