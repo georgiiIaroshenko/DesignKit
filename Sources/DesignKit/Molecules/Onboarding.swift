@@ -3,6 +3,7 @@ import UIKit
 public protocol OnboardingUIProtocol {
     func createNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton
     func skipNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton
+    func myFlagImage() -> UIImage?
 }
 
 public class OnboardingUI: OnboardingUIProtocol {
@@ -29,6 +30,10 @@ public class OnboardingUI: OnboardingUIProtocol {
                 opacity: .full
             )
         }
+    
+    public func myFlagImage() -> UIImage? {
+        return UIImage(named: "Vector", in: .module, compatibleWith: nil)
+    }
     
     public func createNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton {
             return createButton(with: nextButtonConfiguration, text: text, action: action)
