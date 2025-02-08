@@ -32,7 +32,9 @@ public class OnboardingUI: OnboardingUIProtocol {
         }
     
     public func myFlagImage() -> UIImage? {
-        return UIImage(named: "Vector", in: .module, compatibleWith: nil)
+        let image = UIImage(named: "Vector", in: .module, compatibleWith: nil)
+        image?.withTintColor(DSColor.green200.uiColor)
+        return image
     }
     
     public func createNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton {
