@@ -22,11 +22,11 @@ public class OnboardingUI: OnboardingUIProtocol {
     
     private var skipButtonConfiguration: ButtonConfiguration {
             return ButtonConfiguration(
-                font: FontFactory(font: .light, size: .large, color: .primary900, alignment: .center, opacity: .fourty),
+                font: FontFactory(font: .light, size: .large, color: .white100, alignment: .center, opacity: .fourty),
                 backgroundColor: .primary900,
                 cornerRadius: .max,
                 style: .positive,
-                opacity: .zero
+                opacity: .full
             )
         }
     
