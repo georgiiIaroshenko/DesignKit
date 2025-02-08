@@ -1,8 +1,8 @@
 import UIKit
 
-internal enum AppRadius: CGFloat {
+public enum AppRadius: CGFloat {
     case minimum, normal, max
-    func radiusValue() -> CGFloat {
+    public func radiusValue() -> CGFloat {
         switch self {
         case .minimum:
             return 6.0

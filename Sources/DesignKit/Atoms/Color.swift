@@ -49,7 +49,7 @@ public enum DSColor {
     // White
     case white100
     
-    var uiColor: UIColor {
+    public var uiColor: UIColor {
         DSColor.colorMap[self]
             // Если вдруг цвет не найден — fallback.
             ?? .magenta

@@ -12,7 +12,7 @@ public class OnboardingUI: OnboardingUIProtocol {
     
     private var nextButtonConfiguration: ButtonConfiguration {
             return ButtonConfiguration(
-                font: FontFactory(font: .semiBold, size: .large, color: .white100, alignment: .center),
+                font: FontFactory(font: .semiBold, size: .large, color: .white100, alignment: .center, opacity: .full),
                 backgroundColor: .primary500,
                 cornerRadius: .max,
                 style: .positive,
@@ -22,11 +22,11 @@ public class OnboardingUI: OnboardingUIProtocol {
     
     private var skipButtonConfiguration: ButtonConfiguration {
             return ButtonConfiguration(
-                font: FontFactory(font: .light, size: .large, color: .primary900, alignment: .center),
+                font: FontFactory(font: .light, size: .large, color: .primary900, alignment: .center, opacity: .fourty),
                 backgroundColor: .primary900,
                 cornerRadius: .max,
                 style: .positive,
-                opacity: .fourty
+                opacity: .zero
             )
         }
     

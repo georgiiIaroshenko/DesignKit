@@ -25,7 +25,7 @@ class ActionButton {
     func createButton() -> UIButton {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = cornerRadius.radiusValue()
-        button.layer.opacity = opacity.alpha()
+        button.layer.opacity = opacity.opacityValue()
         let attributedTitle = frontText.attributedString(for: text)
         button.setAttributedTitle(attributedTitle, for: .normal)
         

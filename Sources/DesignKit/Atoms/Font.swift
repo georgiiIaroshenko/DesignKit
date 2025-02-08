@@ -2,7 +2,7 @@ import UIKit
 import CoreText
 
 
-internal enum DSFont: String {
+public enum DSFont: String {
     case regular  = "Poppins-Regular"
     case semiBold = "Poppins-SemiBold"
     case bold     = "Poppins-Bold"
@@ -16,7 +16,7 @@ internal enum DSFont: String {
     }()
     
     /// Возвращает шрифт нужного размера, предварительно регистрируя его
-    func font(ofSize size: AppFontSize) -> UIFont {
+    public func font(ofSize size: AppFontSize) -> UIFont {
         // Гарантируем, что шрифты зарегистрированы
         _ = Self.didRegisterFonts
         
@@ -52,7 +52,7 @@ internal enum DSFont: String {
     }
 }
 
-internal enum AppFontSize: CGFloat {
+public enum AppFontSize: CGFloat {
     case small = 12.0
     case midium = 14.0  
     case large = 16.0

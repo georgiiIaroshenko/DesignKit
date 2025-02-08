@@ -1,10 +1,10 @@
 import CoreFoundation
 
 
-enum DSOpacity: Float {
+public enum DSOpacity: Float {
     case full, zero, fourty
     
-    func alpha() -> Float {
+    public func opacityValue() -> Float {
         switch self {
         case .full:
             return 1
