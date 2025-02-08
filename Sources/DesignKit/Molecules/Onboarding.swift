@@ -22,8 +22,8 @@ public class OnboardingUI: OnboardingUIProtocol {
     
     private var skipButtonConfiguration: ButtonConfiguration {
             return ButtonConfiguration(
-                font: FontFactory(font: .light, size: .large, color: .white100, alignment: .center, opacity: .fourty),
-                backgroundColor: .primary900,
+                font: FontFactory(font: .light, size: .large, color: .primary900, alignment: .center, opacity: .fourty),
+                backgroundColor: .white100,
                 cornerRadius: .max,
                 style: .positive,
                 opacity: .full
