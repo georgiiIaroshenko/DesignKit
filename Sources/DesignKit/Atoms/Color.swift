@@ -1,6 +1,6 @@
 import UIKit
 
-internal enum DSColor {
+public enum DSColor {
     // Black
     case black100
     case black200
