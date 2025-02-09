@@ -32,7 +32,7 @@ public class OnboardingUI: OnboardingUIProtocol {
         }
     
     public func myFlagImage() -> UIImage? {
-        let image = UIImage(named: "Vector", in: .module, compatibleWith: nil)
+        let image = UIImage(named: "CupStar", in: .module, compatibleWith: nil)
         image?.withTintColor(DSColor.green200.uiColor)
         print("IMAGE:", image as Any)
         return image
