@@ -111,3 +111,14 @@ public enum DSColor {
         return color
     }
 }
+
+func gradient<T: UIColor, U: UIColor>(firste: T, two: U) -> CAGradientLayer {
+    let gradientLayer = CAGradientLayer()
+    gradientLayer.colors = [
+        firste,
+        two
+    ]
+    gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+    gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+    return gradientLayer
+}
