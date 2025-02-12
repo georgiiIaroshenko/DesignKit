@@ -16,7 +16,7 @@ public enum DSFont: String {
     }()
     
     /// Возвращает шрифт нужного размера, предварительно регистрируя его
-    public func font(ofSize size: AppFontSize) -> UIFont {
+    public func font(ofSize size: DSFontSize) -> UIFont {
         // Гарантируем, что шрифты зарегистрированы
         _ = Self.didRegisterFonts
         
@@ -52,7 +52,7 @@ public enum DSFont: String {
     }
 }
 
-public enum AppFontSize: CGFloat {
+public enum DSFontSize: CGFloat {
     case small = 12.0
     case midium = 14.0  
     case large = 16.0

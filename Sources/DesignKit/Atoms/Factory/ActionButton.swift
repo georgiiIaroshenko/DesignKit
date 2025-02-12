@@ -6,12 +6,12 @@ class ActionButton {
     let frontText: FontFactory
     let image: UIImage?
     let style: Style
-    let cornerRadius: AppRadius
+    let cornerRadius: DSRadius
     let backgroundColor: DSColor
     let opacity: DSOpacity
     let action: () -> Void
     
-    init(text: String, frontText: FontFactory, style: Style, cornerRadius: AppRadius, image: UIImage? = nil ,backgroundColor: DSColor, opacity: DSOpacity, action: @escaping () -> Void) {
+    init(text: String, frontText: FontFactory, style: Style, cornerRadius: DSRadius, image: UIImage? = nil ,backgroundColor: DSColor, opacity: DSOpacity, action: @escaping () -> Void) {
         self.text = text
         self.frontText = frontText
         self.style = style

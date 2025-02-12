@@ -1,6 +1,6 @@
 import UIKit
 
-public enum AppSpacing {
+public enum DSSpacing {
     public enum Small {
         static let value: CGFloat = 4.0
     }

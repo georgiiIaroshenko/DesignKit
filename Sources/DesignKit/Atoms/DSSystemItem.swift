@@ -1,7 +1,7 @@
 import UIKit
 
 
-public enum SystemItem: String {
+public enum DSSystemItem: String {
     case  cupStar = "CupStar"
     case hands1 = "Hands1"
     case hands2 = "Hands2"

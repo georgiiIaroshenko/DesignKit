@@ -64,7 +64,7 @@ public extension OnboardingUI {
 public struct ButtonConfiguration {
     let font: FontFactory
     let backgroundColor: DSColor
-    let cornerRadius: AppRadius
+    let cornerRadius: DSRadius
     let style: Style
     let opacity: DSOpacity
 }

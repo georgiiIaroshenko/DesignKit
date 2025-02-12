@@ -3,14 +3,14 @@ internal protocol FontFactoryProtocol {
     func attributedString(for text: String) -> NSAttributedString
 }
 
-internal struct FontFactory: FontFactoryProtocol {
+public struct FontFactory: FontFactoryProtocol {
     private let font: DSFont
-    private let size: AppFontSize
+    private let size: DSFontSize
     private let color: DSColor
     private let alignment: NSTextAlignment
     private let opacity: DSOpacity
     
-    internal init(font: DSFont, size: AppFontSize, color: DSColor, alignment: NSTextAlignment, opacity: DSOpacity) {
+    internal init(font: DSFont, size: DSFontSize, color: DSColor, alignment: NSTextAlignment, opacity: DSOpacity) {
         self.font = font
         self.size = size
         self.color = color
