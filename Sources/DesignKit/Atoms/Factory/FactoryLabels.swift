@@ -2,6 +2,7 @@ import UIKit
 
 
 public struct FactoryLabel {
+    public init(){}
     static func createLabel(
         text: String, numberOfLines: DSFontNumberOfLines, backgroundColor: DSColor, font: FontFactory
     ) -> UILabel {
