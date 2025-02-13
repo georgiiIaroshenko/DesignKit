@@ -57,3 +57,7 @@ public enum DSFontSize: CGFloat {
     case midium = 14.0  
     case large = 16.0
 }
+
+public enum DSFontNumberOfLines: Int {
+ case zero = 0
+}

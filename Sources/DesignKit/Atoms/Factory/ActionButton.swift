@@ -1,6 +1,6 @@
 import UIKit
 
-class ActionButton {
+public class ActionButton {
     
     let text: String
     let frontText: FontFactory

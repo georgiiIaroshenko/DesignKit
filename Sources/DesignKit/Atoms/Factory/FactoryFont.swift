@@ -1,16 +1,13 @@
 import UIKit
-internal protocol FontFactoryProtocol {
-    func attributedString(for text: String) -> NSAttributedString
-}
 
-public struct FontFactory: FontFactoryProtocol {
+public struct FontFactory {
     private let font: DSFont
     private let size: DSFontSize
     private let color: DSColor
     private let alignment: NSTextAlignment
     private let opacity: DSOpacity
     
-    internal init(font: DSFont, size: DSFontSize, color: DSColor, alignment: NSTextAlignment, opacity: DSOpacity) {
+    public init(font: DSFont, size: DSFontSize, color: DSColor, alignment: NSTextAlignment, opacity: DSOpacity) {
         self.font = font
         self.size = size
         self.color = color
@@ -18,7 +15,7 @@ public struct FontFactory: FontFactoryProtocol {
         self.opacity = opacity
     }
     
-    internal func attributedString(for text: String) -> NSAttributedString {
+    public func attributedString(for text: String) -> NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = alignment
         
