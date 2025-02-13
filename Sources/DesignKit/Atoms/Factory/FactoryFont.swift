@@ -15,13 +15,13 @@ public struct FontFactory {
         self.opacity = opacity
     }
     
-    public func attributedString(for text: String) -> NSAttributedString {
+    public func attributedString(for text: String?) -> NSAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = alignment
         
         
         return NSAttributedString(
-            string: text,
+            string: text ?? "",
             attributes: [
                 .font: font.font(ofSize: size),
                 .foregroundColor: color.uiColor.withAlphaComponent(CGFloat(opacity.opacityValue())),
