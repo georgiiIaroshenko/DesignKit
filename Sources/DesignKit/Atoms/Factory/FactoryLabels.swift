@@ -3,7 +3,7 @@ import UIKit
 
 public struct FactoryLabel {
     public init(){}
-    static func createLabel(
+    public static func createLabel(
         text: String, numberOfLines: DSFontNumberOfLines, backgroundColor: DSColor, font: FontFactory
     ) -> UILabel {
         let label = UILabel()
