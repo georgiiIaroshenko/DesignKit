@@ -24,8 +24,7 @@ public struct FontFactory {
             string: text ?? "f",
             attributes: [
                 .font: font.font(ofSize: size),
-                .foregroundColor: color.uiColor,
-//                    .withAlphaComponent(CGFloat(opacity.opacityValue())),
+                .foregroundColor: color.uiColor.withAlphaComponent(CGFloat(opacity.opacityValue())),
                 .paragraphStyle: paragraphStyle
             ]
         )
