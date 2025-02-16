@@ -21,7 +21,7 @@ public struct FontFactory {
         
         
         return NSAttributedString(
-            string: text ?? "",
+            string: text ?? "f",
             attributes: [
                 .font: font.font(ofSize: size),
                 .foregroundColor: color.uiColor,

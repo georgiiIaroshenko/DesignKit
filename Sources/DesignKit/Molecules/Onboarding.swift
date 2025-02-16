@@ -51,7 +51,7 @@ public extension OnboardingUI {
     func createButton(with configuration: ButtonConfiguration, text: String, action: @escaping () -> Void) -> UIButton {
         return ActionButton(
             text: text,
-            frontText: configuration.font,
+            setupFontText: configuration.font,
             style: configuration.style,
             cornerRadius: configuration.cornerRadius,
             backgroundColor: configuration.backgroundColor,

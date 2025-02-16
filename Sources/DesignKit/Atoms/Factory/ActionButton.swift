@@ -1,9 +1,9 @@
 import UIKit
 
-public class ActionButton {
+class ActionButton {
     
     let text: String
-    let frontText: FontFactory
+    let setupFontText: FontFactory
     let image: UIImage?
     let style: Style
     let cornerRadius: DSRadius
@@ -11,9 +11,9 @@ public class ActionButton {
     let opacity: DSOpacity
     let action: () -> Void
     
-    init(text: String, frontText: FontFactory, style: Style, cornerRadius: DSRadius, image: UIImage? = nil ,backgroundColor: DSColor, opacity: DSOpacity, action: @escaping () -> Void) {
+    init(text: String, setupFontText: FontFactory, style: Style, cornerRadius: DSRadius, image: UIImage? = nil ,backgroundColor: DSColor, opacity: DSOpacity, action: @escaping () -> Void) {
         self.text = text
-        self.frontText = frontText
+        self.setupFontText = setupFontText
         self.style = style
         self.cornerRadius = cornerRadius
         self.image = image
@@ -26,7 +26,7 @@ public class ActionButton {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = cornerRadius.radiusValue()
         button.layer.opacity = opacity.opacityValue()
-        let attributedTitle = frontText.attributedString(for: text)
+        let attributedTitle = setupFontText.attributedString(for: text)
         button.setAttributedTitle(attributedTitle, for: .normal)
         
         print("Attributed title: \(text)")

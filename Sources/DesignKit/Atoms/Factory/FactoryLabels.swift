@@ -4,7 +4,7 @@ import UIKit
 public struct FactoryLabel {
     public init(){}
     public static func createLabel(
-        text: String, numberOfLines: DSFontNumberOfLines, backgroundColor: DSColor, font: FontFactory
+        text: String?, numberOfLines: DSFontNumberOfLines, backgroundColor: DSColor, font: FontFactory
     ) -> UILabel {
         let label = UILabel()
         label.attributedText = font.attributedString(for: text)
