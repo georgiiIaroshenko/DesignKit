@@ -54,7 +54,7 @@ public enum DSFont: String {
 
 public enum DSFontSize: CGFloat {
     case small = 12.0
-    case midium = 14.0  
+    case medium = 14.0
     case large = 16.0
 }
 
