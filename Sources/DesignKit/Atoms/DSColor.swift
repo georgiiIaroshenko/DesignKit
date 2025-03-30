@@ -54,6 +54,7 @@ public enum DSColor {
             // Если вдруг цвет не найден — fallback.
             ?? .magenta
     }
+    
     private static let colorMap: [DSColor: UIColor] = [
         // Black
         .black100:    loadColor("Colors/black100"),
