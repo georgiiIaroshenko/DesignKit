@@ -2,7 +2,7 @@ import UIKit
 
 struct ActionButtonConfiguration {
     let text: String
-    let fontFactory: FontFactoryStyle
+    let fontFactory: FontFactory
     let image: UIImage?
     let style: Style
     let cornerRadius: DSRadius
@@ -22,7 +22,7 @@ class FactoryActionButton {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = configuration.cornerRadius.rawValue
         button.layer.opacity = configuration.opacity.rawValue
-        let attributedTitle = FontFactory.attributedString(for: configuration.text, style: configuration.fontFactory)
+        let attributedTitle = configuration.fontFactory.attributedString(for: configuration.text)
         button.setAttributedTitle(attributedTitle, for: .normal)
         
         print("Attributed title: \(configuration.text)")
