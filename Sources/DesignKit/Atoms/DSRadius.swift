@@ -1,15 +1,7 @@
 import UIKit
 
 public enum DSRadius: CGFloat {
-    case minimum, normal, max
-    public func radiusValue() -> CGFloat {
-        switch self {
-        case .minimum:
-            return 6.0
-        case .normal:
-            return 6.0
-        case .max:
-            return 25.0
-        }
-    }
+    case minimum = 3.0
+    case normal = 6.0
+    case max = 25.0
 }

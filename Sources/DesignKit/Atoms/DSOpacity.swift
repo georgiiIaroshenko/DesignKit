@@ -2,16 +2,7 @@ import CoreFoundation
 
 
 public enum DSOpacity: Float {
-    case full, zero, fourty
-    
-    public func opacityValue() -> Float {
-        switch self {
-        case .full:
-            return 1
-        case .fourty:
-            return 0.4
-        case .zero:
-            return 0
-        }
-    }
+    case full = 1
+    case zero = 0
+    case fourty = 0.4
 }
