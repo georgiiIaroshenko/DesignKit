@@ -1,7 +1,7 @@
 import UIKit
 
 
-struct StackViewStyle {
+public struct StackViewStyle {
     let axis: NSLayoutConstraint.Axis
     let spacing: DSSpacing
     let distribution: UIStackView.Distribution
@@ -15,8 +15,8 @@ struct StackViewStyle {
     }
 }
 
-public class CustomUIStackView: UIStackView {
-    func applyStyle(_ style: StackViewStyle) {
+final public class CustomStackView: UIStackView {
+    public final func applyStyle(_ style: StackViewStyle) {
         self.axis = style.axis
         self.spacing = style.spacing.rawValue
         self.distribution = style.distribution

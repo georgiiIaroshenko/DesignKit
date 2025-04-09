@@ -2,7 +2,7 @@ import UIKit
 
 
 public enum DSSystemItemOnboarding: String {
-    case  cupStar = "CupStar"
+    case cupStar = "CupStar"
     case hands1 = "Hands1"
     case hands2 = "Hands2"
     case security = "Security"

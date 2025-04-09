@@ -16,7 +16,7 @@ public enum Style: String, CaseIterable {
     case positive
 }
 
-class FactoryActionButton {
+final public class FactoryActionButton {
     
     static func createButton(configuration: ActionButtonConfiguration) -> UIButton {
         let button = UIButton(type: .system)

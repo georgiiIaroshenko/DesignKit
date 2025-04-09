@@ -6,7 +6,7 @@ public protocol OnboardingUIProtocol {
     func myFlagImage() -> UIImage?
 }
 
-public class OnboardingUI: OnboardingUIProtocol {
+final public class OnboardingUI: OnboardingUIProtocol {
     private init() {}
     
     public static let shared = OnboardingUI()
@@ -31,18 +31,18 @@ public class OnboardingUI: OnboardingUIProtocol {
             )
         }
     
-    public func myFlagImage() -> UIImage? {
+    public final func myFlagImage() -> UIImage? {
         let image = UIImage(named: "CupStar", in: .module, compatibleWith: nil)
         image?.withTintColor(DSColor.green200.uiColor)
         print("IMAGE:", image as Any)
         return image
     }
     
-    public func createNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton {
+    public final func createNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton {
             return createButton(with: nextButtonConfiguration, text: text, action: action)
         }
     
-    public func skipNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton {
+    public final func skipNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton {
             return createButton(with: skipButtonConfiguration, text: text, action: action)
         }
 }

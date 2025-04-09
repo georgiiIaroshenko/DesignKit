@@ -1,5 +1,3 @@
-import CoreFoundation
-
 
 public enum DSOpacity: Float {
     case full = 1
