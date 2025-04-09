@@ -1,13 +1,7 @@
 import UIKit
 
-public enum DSSpacing {
-    public enum Small {
-        static let value: CGFloat = 4.0
-    }
-    public enum Medium {
-        static let value: CGFloat = 8.0
-    }
-    public enum Large {
-        static let value: CGFloat = 16.0
-    }
+public enum DSSpacing: CGFloat {
+    case small = 4.0
+    case medium = 8.0
+    case large = 16.0
 }

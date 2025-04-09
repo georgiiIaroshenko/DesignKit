@@ -48,16 +48,15 @@ public class OnboardingUI: OnboardingUIProtocol {
 }
 
 public extension OnboardingUI {
-    func createButton(with configuration: ButtonConfiguration, text: String, action: @escaping () -> Void) -> UIButton {
-        return ActionButton(
-            text: text,
-            setupFontText: configuration.font,
-            style: configuration.style,
-            cornerRadius: configuration.cornerRadius,
-            backgroundColor: configuration.backgroundColor,
-            opacity: configuration.opacity,
-            action: action
-        ).createButton()
+    func createButton(with config: ButtonConfiguration, text: String, action: @escaping () -> Void) -> UIButton {
+        return FactoryActionButton.createButton(configuration: ActionButtonConfiguration(text: text,
+                                                                                         fontFactory: config.font,
+                                                                                         image: nil,
+                                                                                         style: config.style,
+                                                                                         cornerRadius: config.cornerRadius,
+                                                                                         backgroundColor: config.backgroundColor,
+                                                                                         opacity: config.opacity,
+                                                                                         action: action))
     }
 }
 
