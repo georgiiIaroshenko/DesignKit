@@ -49,6 +49,10 @@ public enum DSColor {
     // White
     case white100
     
+    // GradientColors
+    case gradient100
+    case gradient200
+    
     public var uiColor: UIColor {
         DSColor.colorMap[self]
             // Если вдруг цвет не найден — fallback.
@@ -103,6 +107,10 @@ public enum DSColor {
         
         // White
         .white100:    loadColor("Colors/white100"),
+        
+        // GradientColors
+        .gradient100:    loadColor("GradientColor/gradient100"),
+        .gradient200:    loadColor("GradientColor/gradient200"),
     ]
     
     private static func loadColor(_ assetName: String) -> UIColor {
