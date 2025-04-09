@@ -14,7 +14,7 @@ public enum DSSystemItemOnboarding: String {
 }
 
 public enum DSSystemItemAuthReg: String {
-    case  eye = "Eye"
+    case eye = "Eye"
     case eyeClosed = "EyeClosed"
     
     public var image: UIImage {
