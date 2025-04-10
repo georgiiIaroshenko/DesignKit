@@ -6,7 +6,7 @@ extension UIView {
         autoresizingMaskFalse(subviews)
     }
     
-    public func addSubviews(_ subviews: [UIView]) {
+    private func addSubviews(_ subviews: [UIView]) {
             subviews.forEach { addSubview($0) }
         }
 }
