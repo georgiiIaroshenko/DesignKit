@@ -1,7 +1,6 @@
 import UIKit
 
 struct ActionButtonConfiguration {
-    let text: String
     let fontFactory: FontFactory
     let image: UIImage?
     let style: Style
@@ -22,10 +21,7 @@ final public class FactoryActionButton {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = configuration.cornerRadius.rawValue
         button.layer.opacity = configuration.opacity.rawValue
-        let attributedTitle = configuration.fontFactory.attributedString(for: configuration.text)
-        button.setAttributedTitle(attributedTitle, for: .normal)
-        
-        print("Attributed title: \(configuration.text)")
+        configuration.fontFactory.apply(to: button)
         button.backgroundColor = configuration.backgroundColor.uiColor
         let uiAction = UIAction { _ in
             configuration.action()

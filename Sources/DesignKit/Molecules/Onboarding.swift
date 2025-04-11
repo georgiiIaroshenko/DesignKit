@@ -1,8 +1,8 @@
 import UIKit
 
 public protocol OnboardingUIProtocol {
-    func createNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton
-    func skipNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton
+    func createNextScreenButton(action: @escaping () -> Void) -> UIButton
+    func skipNextScreenButton(action: @escaping () -> Void) -> UIButton
     func myFlagImage() -> UIImage?
 }
 
@@ -38,19 +38,18 @@ final public class OnboardingUI: OnboardingUIProtocol {
         return image
     }
     
-    public final func createNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton {
-            return createButton(with: nextButtonConfiguration, text: text, action: action)
+    public final func createNextScreenButton(action: @escaping () -> Void) -> UIButton {
+            return createButton(with: nextButtonConfiguration, action: action)
         }
     
-    public final func skipNextScreenButton(text: String, action: @escaping () -> Void) -> UIButton {
-            return createButton(with: skipButtonConfiguration, text: text, action: action)
+    public final func skipNextScreenButton(action: @escaping () -> Void) -> UIButton {
+            return createButton(with: skipButtonConfiguration, action: action)
         }
 }
 
 public extension OnboardingUI {
-    func createButton(with config: ButtonConfiguration, text: String, action: @escaping () -> Void) -> UIButton {
-        return FactoryActionButton.createButton(configuration: ActionButtonConfiguration(text: text,
-                                                                                         fontFactory: config.font,
+    func createButton(with config: ButtonConfiguration, action: @escaping () -> Void) -> UIButton {
+        return FactoryActionButton.createButton(configuration: ActionButtonConfiguration(fontFactory: config.font,
                                                                                          image: nil,
                                                                                          style: config.style,
                                                                                          cornerRadius: config.cornerRadius,

@@ -1,11 +1,11 @@
 import UIKit
 
 public struct FontFactory {
-    private let font: DSFont
-    private let size: DSFontSize
-    private let color: DSColor
-    private let alignment: NSTextAlignment
-    private let opacity: DSOpacity
+    let font: DSFont
+    let size: DSFontSize
+    let color: DSColor
+    let alignment: NSTextAlignment
+    let opacity: DSOpacity
     
     public init(font: DSFont, size: DSFontSize, color: DSColor, alignment: NSTextAlignment, opacity: DSOpacity) {
         self.font = font
@@ -15,19 +15,27 @@ public struct FontFactory {
         self.opacity = opacity
     }
     
-    public func attributedString(for text: String?) -> NSAttributedString {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = alignment
-        
-        
-        return NSAttributedString(
-            string: text ?? "f",
-            attributes: [
-                .font: font.font(ofSize: size),
-                .foregroundColor: color.uiColor.withAlphaComponent(CGFloat(opacity.rawValue)),
-                .paragraphStyle: paragraphStyle
-            ]
-        )
+    public func uiFont() -> UIFont? {
+        return font.font(ofSize: size)
+    }
+    
+    /// Возвращает цвет с учётом opacity
+    public func uiColor() -> UIColor {
+        return color.uiColor.withAlphaComponent(CGFloat(opacity.rawValue))
+    }
+    
+    public func apply(to label: UILabel) {
+        label.font = uiFont()
+        label.textColor = uiColor()
+        label.textAlignment = alignment
+        label.layer.opacity = Float(opacity.rawValue)
+    }
+    
+    public func apply(to button: UIButton) {
+        button.titleLabel?.font = uiFont()
+        button.setTitleColor(uiColor(), for: .normal)
+        button.titleLabel?.textAlignment = alignment
+        button.layer.opacity = Float(opacity.rawValue)
     }
 }
 
