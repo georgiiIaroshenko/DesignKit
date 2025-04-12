@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 protocol AttributedTextSettable {
     func setAttributedContent(_ content: NSAttributedString)
@@ -6,6 +7,6 @@ protocol AttributedTextSettable {
 
 protocol FontStylable {
     associatedtype Style: FontFactoryProtocol
-    func applyStyle(_ style: Style)
+    func applyFrontStyle(_ style: Style)
 }
 

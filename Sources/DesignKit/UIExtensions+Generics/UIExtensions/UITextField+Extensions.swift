@@ -3,7 +3,7 @@ import UIKit
 extension UITextField: AttributedTextSettable, FontStylable {
     typealias Style = FontFactory
      
-    func applyStyle(_ style: FontFactory) {
+    func applyFrontStyle(_ style: FontFactory) {
         self.font = style.font.font(ofSize: style.size)
         self.textColor = style.color.uiColor.withAlphaComponent(CGFloat(style.opacity.rawValue))
         self.textAlignment = style.alignment

@@ -1,8 +1,8 @@
 import UIKit
 
 public protocol OnboardingUIProtocol {
-    func createNextScreenButton(action: @escaping () -> Void) -> UIButton
-    func skipNextScreenButton(action: @escaping () -> Void) -> UIButton
+    func createNextScreenButton() -> UIButton
+    func skipNextScreenButton() -> UIButton
     func myFlagImage() -> UIImage?
 }
 
@@ -14,9 +14,9 @@ final public class OnboardingUI: OnboardingUIProtocol {
     private var nextButtonConfiguration: ButtonConfiguration {
             return ButtonConfiguration(
                 font: FontFactory(font: .semiBold, size: .large, color: .white100, alignment: .center, opacity: .full),
-                backgroundColor: .primary500,
+                style: .system,
                 cornerRadius: .max,
-                style: .positive,
+                backgroundColor: .primary500,
                 opacity: .full
             )
         }
@@ -24,9 +24,9 @@ final public class OnboardingUI: OnboardingUIProtocol {
     private var skipButtonConfiguration: ButtonConfiguration {
             return ButtonConfiguration(
                 font: FontFactory(font: .light, size: .large, color: .primary900, alignment: .center, opacity: .fourty),
-                backgroundColor: .white100,
+                style: .system,
                 cornerRadius: .max,
-                style: .positive,
+                backgroundColor: .white100,
                 opacity: .full
             )
         }
@@ -38,32 +38,23 @@ final public class OnboardingUI: OnboardingUIProtocol {
         return image
     }
     
-    public final func createNextScreenButton(action: @escaping () -> Void) -> UIButton {
-            return createButton(with: nextButtonConfiguration, action: action)
+    public final func createNextScreenButton() -> UIButton {
+            return createButton(with: nextButtonConfiguration)
         }
     
-    public final func skipNextScreenButton(action: @escaping () -> Void) -> UIButton {
-            return createButton(with: skipButtonConfiguration, action: action)
+    public final func skipNextScreenButton() -> UIButton {
+            return createButton(with: skipButtonConfiguration)
         }
 }
 
 public extension OnboardingUI {
-    func createButton(with config: ButtonConfiguration, action: @escaping () -> Void) -> UIButton {
-        return FactoryActionButton.createButton(configuration: ActionButtonConfiguration(fontFactory: config.font,
-                                                                                         image: nil,
-                                                                                         style: config.style,
-                                                                                         cornerRadius: config.cornerRadius,
-                                                                                         backgroundColor: config.backgroundColor,
-                                                                                         opacity: config.opacity,
-                                                                                         action: action))
+    func createButton(with config: ButtonConfiguration) -> UIButton {
+        return FactoryButton.nonActionButtonCreate(ButtonConfiguration(font: config.font,
+                                                                       style: config.style,
+                                                                       cornerRadius: config.cornerRadius,
+                                                                       backgroundColor: config.backgroundColor,
+                                                                       opacity: config.opacity )
+        )
     }
-}
-
-public struct ButtonConfiguration {
-    let font: FontFactory
-    let backgroundColor: DSColor
-    let cornerRadius: DSRadius
-    let style: Style
-    let opacity: DSOpacity
 }
 

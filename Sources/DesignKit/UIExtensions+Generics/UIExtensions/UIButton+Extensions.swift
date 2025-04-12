@@ -1,10 +1,10 @@
 import UIKit
 
 extension UIButton: AttributedTextSettable, FontStylable {
-    
     typealias Style = FontFactory
+    typealias configuration = ButtonConfiguration
     
-    func applyStyle(_ style: FontFactory) {
+    public func applyFrontStyle(_ style: FontFactory) {
         self.titleLabel?.font = style.font.font(ofSize: style.size)
         self.setTitleColor( style.color.uiColor, for: .normal)
         self.titleLabel?.textAlignment = style.alignment
