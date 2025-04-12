@@ -1,6 +1,14 @@
 import UIKit
 
-public struct FontFactory {
+protocol FontFactoryProtocol {
+    var font: DSFont { get }
+    var size: DSFontSize { get }
+    var color: DSColor { get }
+    var alignment: NSTextAlignment { get }
+    var opacity: DSOpacity { get }
+}
+
+public struct FontFactory: FontFactoryProtocol {
     let font: DSFont
     let size: DSFontSize
     let color: DSColor
@@ -13,29 +21,6 @@ public struct FontFactory {
         self.color = color
         self.alignment = alignment
         self.opacity = opacity
-    }
-    
-    public func uiFont() -> UIFont? {
-        return font.font(ofSize: size)
-    }
-    
-    /// Возвращает цвет с учётом opacity
-    public func uiColor() -> UIColor {
-        return color.uiColor.withAlphaComponent(CGFloat(opacity.rawValue))
-    }
-    
-    public func apply(to label: UILabel) {
-        label.font = uiFont()
-        label.textColor = uiColor()
-        label.textAlignment = alignment
-        label.layer.opacity = Float(opacity.rawValue)
-    }
-    
-    public func apply(to button: UIButton) {
-        button.titleLabel?.font = uiFont()
-        button.setTitleColor(uiColor(), for: .normal)
-        button.titleLabel?.textAlignment = alignment
-        button.layer.opacity = Float(opacity.rawValue)
     }
 }
 

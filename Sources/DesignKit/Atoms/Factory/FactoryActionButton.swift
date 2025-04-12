@@ -21,7 +21,7 @@ final public class FactoryActionButton {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = configuration.cornerRadius.rawValue
         button.layer.opacity = configuration.opacity.rawValue
-        configuration.fontFactory.apply(to: button)
+        button.applyStyle(configuration.fontFactory)
         button.backgroundColor = configuration.backgroundColor.uiColor
         let uiAction = UIAction { _ in
             configuration.action()
