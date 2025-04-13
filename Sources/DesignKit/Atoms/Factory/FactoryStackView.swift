@@ -15,11 +15,13 @@ public struct StackViewStyle {
     }
 }
 
-final public class CustomStackView: UIStackView {
-    public final func applyStyle(_ style: StackViewStyle) {
-        self.axis = style.axis
-        self.spacing = style.spacing.rawValue
-        self.distribution = style.distribution
-        self.alignment = style.alignment
+final public class FactoryStackView: UIStackView {
+    public static func createStackView(_ style: StackViewStyle) -> UIStackView {
+        let sw = UIStackView()
+        sw.axis = style.axis
+        sw.spacing = style.spacing.rawValue
+        sw.distribution = style.distribution
+        sw.alignment = style.alignment
+        return sw
     }
 }
