@@ -9,7 +9,7 @@ public struct ButtonConfiguration {
 }
 
 public class FactoryButton {
-    
+    public init(){}
     public static func nonActionButtonCreate(_ configuration: ButtonConfiguration) -> UIButton {
         let button = UIButton(type: configuration.style)
         button.layer.cornerRadius = configuration.cornerRadius.rawValue
