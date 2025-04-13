@@ -36,7 +36,7 @@ public struct FactoryGradientLabel {
     }
 }
 
-public class PaddedLabel: UILabel {
+private class PaddedLabel: UILabel {
     private var horizontalPadding: CGFloat = 10
     
     // Переопределяем метод, отвечающий за вычисление прямоугольника для текста.
