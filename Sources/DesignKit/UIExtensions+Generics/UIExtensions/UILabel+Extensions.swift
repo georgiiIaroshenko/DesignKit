@@ -13,4 +13,13 @@ extension UILabel: AttributedTextSettable, FontStylable {
     public func setAttributedContent(_ content: NSAttributedString) {
         self.attributedText = content
     }
+    
+    public override var intrinsicContentSize: CGSize {
+            // Получаем стандартный размер
+            var size = super.intrinsicContentSize
+            // При необходимости добавляем дополнительные отступы
+            size.height += 10
+            size.width += 20
+            return size
+        }
 }
