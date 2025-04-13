@@ -53,22 +53,25 @@ public enum DSColor {
     case gradient100
     case gradient200
     
+    //Clear
+    case clear
+    
     public var uiColor: UIColor {
         DSColor.colorMap[self]
-            // Если вдруг цвет не найден — fallback.
-            ?? .magenta
+        // Если вдруг цвет не найден — fallback.
+        ?? .magenta
     }
     
     private static let colorMap: [DSColor: UIColor] = [
         // Black
         .black100:    loadColor("Colors/black100"),
         .black200:    loadColor("Colors/black200"),
-
+        
         // Green
         .green100:    loadColor("Colors/green100"),
         .green200:    loadColor("Colors/green200"),
         .green300:    loadColor("Colors/green300"),
-
+        
         // Neutral
         .neutral100:  loadColor("Colors/neutral100"),
         .neutral200:  loadColor("Colors/neutral200"),
@@ -111,6 +114,9 @@ public enum DSColor {
         // GradientColors
         .gradient100:    loadColor("GradientColor/gradient100"),
         .gradient200:    loadColor("GradientColor/gradient200"),
+        
+        //Clear
+        .clear: .clear
     ]
     
     private static func loadColor(_ assetName: String) -> UIColor {

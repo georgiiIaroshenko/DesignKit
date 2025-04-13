@@ -4,7 +4,7 @@ public struct ButtonConfiguration {
     let font: FontFactory
     let style: UIButton.ButtonType
     let cornerRadius: DSRadius
-    let backgroundColor: DSColor
+    let backgroundColor: DSColor = .clear
     let opacity: DSOpacity
 }
 

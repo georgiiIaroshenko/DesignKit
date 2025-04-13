@@ -15,7 +15,7 @@ public struct FontFactory: FontFactoryProtocol {
     let alignment: NSTextAlignment
     let opacity: DSOpacity
     
-    public init(font: DSFont, size: DSFontSize, color: DSColor, alignment: NSTextAlignment, opacity: DSOpacity) {
+    public init(font: DSFont, size: DSFontSize, color: DSColor = .clear, alignment: NSTextAlignment, opacity: DSOpacity) {
         self.font = font
         self.size = size
         self.color = color
