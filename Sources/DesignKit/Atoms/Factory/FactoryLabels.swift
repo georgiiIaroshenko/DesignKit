@@ -11,6 +11,15 @@ public struct FactoryLabel {
         label.numberOfLines = numberOfLines.rawValue
         return label
     }
+    
+    public static func createPaddedLabel(numberOfLines: DSFontNumberOfLines, backgroundColor: DSColor, font: FontFactory
+    ) -> UILabel {
+        let label = PaddedLabel()
+        label.applyFrontStyle(font)
+        label.backgroundColor = backgroundColor.uiColor
+        label.numberOfLines = numberOfLines.rawValue
+        return label
+    }
 }
 
 public struct FactoryGradientLabel {
@@ -29,15 +38,6 @@ public struct FactoryGradientLabel {
 
 public class PaddedLabel: UILabel {
     private var horizontalPadding: CGFloat = 10
-
-    public static func createLabel(numberOfLines: DSFontNumberOfLines, backgroundColor: DSColor, font: FontFactory
-    ) -> UILabel {
-        let label = UILabel()
-        label.applyFrontStyle(font)
-        label.backgroundColor = backgroundColor.uiColor
-        label.numberOfLines = numberOfLines.rawValue
-        return label
-    }
     
     // Переопределяем метод, отвечающий за вычисление прямоугольника для текста.
     public override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
