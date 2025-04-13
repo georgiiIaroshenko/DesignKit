@@ -56,10 +56,11 @@ public enum DSFontSize: CGFloat {
     case small = 12.0
     case medium = 14.0
     case large = 16.0
-    case gradientMedium = 20.0
-    case gradientLarge = 28.0
+    case gradientSmall = 20.0
+    case gradientMedium = 28.0
 }
 
 public enum DSFontNumberOfLines: Int {
- case zero = 0
+    case zero = 0
+    case one = 1
 }
