@@ -13,6 +13,13 @@ public class GradientLabel: UILabel {
         }
     }
     
+    public var gradientDirection: GradientDirection = .leftToRight {
+            didSet {
+                gradientLayer.startPoint = gradientDirection.startPoint
+                gradientLayer.endPoint = gradientDirection.endPoint
+            }
+        }
+    
     // Инициализаторы:
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,8 +38,10 @@ public class GradientLabel: UILabel {
         
         // Настроим начальные параметры градиента
         gradientLayer.colors = gradientColors.map { $0.cgColor }
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        // Инициализируем с дефолтным направлением
+        gradientLayer.startPoint = gradientDirection.startPoint
+        gradientLayer.endPoint = gradientDirection.endPoint
+        
         // Добавляем слой только один раз
         layer.addSublayer(gradientLayer)
     }
@@ -71,6 +80,39 @@ public class GradientLabel: UILabel {
             return .natural
         @unknown default:
             return .left
+        }
+    }
+}
+
+public enum GradientDirection {
+    case leftToRight
+    case topToBottom
+    case topLeftToBottomRight
+    case topRightToBottomLeft
+
+    var startPoint: CGPoint {
+        switch self {
+        case .leftToRight:
+            return CGPoint(x: 0, y: 0.5)
+        case .topToBottom:
+            return CGPoint(x: 0.5, y: 0)
+        case .topLeftToBottomRight:
+            return CGPoint(x: 0, y: 0)
+        case .topRightToBottomLeft:
+            return CGPoint(x: 1, y: 0)
+        }
+    }
+
+    var endPoint: CGPoint {
+        switch self {
+        case .leftToRight:
+            return CGPoint(x: 1, y: 0.5)
+        case .topToBottom:
+            return CGPoint(x: 0.5, y: 1)
+        case .topLeftToBottomRight:
+            return CGPoint(x: 1, y: 1)
+        case .topRightToBottomLeft:
+            return CGPoint(x: 0, y: 1)
         }
     }
 }
