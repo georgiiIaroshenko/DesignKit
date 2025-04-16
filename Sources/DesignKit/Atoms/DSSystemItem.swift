@@ -13,9 +13,10 @@ public enum DSSystemItemOnboarding: String {
     }
 }
 
-public enum DSSystemItemAuthReg: String {
+public enum DSSystemItemAuth: String {
     case eye = "Eye"
     case eyeClosed = "EyeClosed"
+    case agreement = "Agreement"
     
     public var image: UIImage {
         return UIImage(named: self.rawValue, in: .module, compatibleWith: nil) ?? UIImage(systemName: "pencil")!
