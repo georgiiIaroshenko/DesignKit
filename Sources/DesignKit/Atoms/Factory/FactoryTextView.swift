@@ -18,7 +18,7 @@ final public class FactoryTextView: UITextView {
     public static func createTextField(_ style: TextViewStyle) -> UITextView {
         let sw = UITextView()
         sw.font = style.font.font.font(ofSize: style.font.size)
-        sw.textColor = style.font.color.uiColor
+        sw.textColor = style.font.color.uiColor.withAlphaComponent(CGFloat(style.font.opacity.rawValue))
         sw.textAlignment = style.font.alignment
         sw.layer.opacity = style.font.opacity.rawValue
         sw.backgroundColor = style.backgroundColor.uiColor
