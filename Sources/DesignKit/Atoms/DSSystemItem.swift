@@ -1,7 +1,9 @@
 import UIKit
 
-
-public enum DSSystemItemOnboarding: String {
+public protocol Image {
+    var image: UIImage { get }
+}
+public enum DSSystemItemOnboarding: String, Image {
     case cupStar = "CupStar"
     case hands1 = "Hands1"
     case hands2 = "Hands2"
@@ -13,7 +15,7 @@ public enum DSSystemItemOnboarding: String {
     }
 }
 
-public enum DSSystemItemAuth: String {
+public enum DSSystemItemAuth: String, Image {
     case eye = "Eye"
     case eyeClosed = "EyeClosed"
     case agreement = "Agreement"
